@@ -44,3 +44,8 @@ Thumbs.db
 
 # ── Docker ──────────────────────────────────────────────────────
 docker-compose.override.yml
+
+# ── Локальные миграционные дампы и скрипты с секретами ─────────
+restore_to_neon.ps1
+utlc_era.sql
+*.backup

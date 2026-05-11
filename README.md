@@ -1,5 +1,51 @@
 # UTLC ERA v2.1 — Production Ready
 
+## Развёртывание у себя (для новых разработчиков)
+
+Проект использует **PostgreSQL 16+**. У каждого разработчика своя локальная БД — общей пока нет.
+
+### 1. Установи PostgreSQL
+- Windows: https://www.postgresql.org/download/windows/
+- macOS: `brew install postgresql@16 && brew services start postgresql@16`
+- Linux: `sudo apt install postgresql-16`
+
+### 2. Создай базу
+```bash
+# Подключиться под суперюзером и создать БД
+psql -U postgres -c "CREATE DATABASE utlc_era;"
+```
+
+### 3. Настрой backend/.env
+```bash
+cp backend/.env.example backend/.env
+```
+Открой `backend/.env` и заполни параметры подключения:
+```
+DB_HOST=localhost
+DB_PORT=5432
+DB_NAME=utlc_era
+DB_USER=postgres
+DB_PASSWORD=<твой пароль postgres>
+```
+
+### 4. Запусти backend
+```bash
+cd backend
+pip install -r requirements.txt
+uvicorn main:app --host 0.0.0.0 --port 8000
+```
+При первом запуске таблицы и миграции создадутся автоматически.
+
+### 5. Запусти frontend
+```bash
+cd frontend
+npm install
+npm run dev
+```
+Открой http://localhost:5173.
+
+---
+
 ## Быстрый старт (Docker)
 
 ```bash
