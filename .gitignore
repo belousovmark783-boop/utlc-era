@@ -5,7 +5,7 @@
 backend/.env
 *.pem
 *.key
-
+.claude
 # ── Python ──────────────────────────────────────────────────────
 __pycache__/
 *.py[cod]
