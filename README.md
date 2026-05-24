@@ -2,8 +2,7 @@
 
 ## Развёртывание у себя (для новых разработчиков)
 
-Проект использует **PostgreSQL 16+**. У каждого разработчика своя локальная БД — общей пока нет.
-
+Проект использует **PostgreSQL 16+**.
 ### 1. Установи PostgreSQL
 - Windows: https://www.postgresql.org/download/windows/
 - macOS: `brew install postgresql@16 && brew services start postgresql@16`
